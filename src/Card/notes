@@ -1,0 +1,144 @@
+// // Card Data Structure
+// // Card {
+// //   rank: string, // e.g., 'Ace', '2', '3', ..., 'King'
+// //   suit: string, // e.g., 'coins', 'cups', 'swords', ...
+// //   color: string, // e.g., 'red', 'blue', 'black', 'green'
+// //   backImage: string, // path to the back image of the card
+// //   pipLayout: string | number[], // pip layout pattern for ranks 2-10, or null for face cards
+// //   basePointValue: number // base point value for the rank
+// // }
+
+// // Deck Data Structure
+// // Deck = Array<Card> // An array of Card objects representing the deck
+
+// // // Player Data Structure
+// // Player {
+// //   id: number,
+// //   username: string,
+// //   email: string,
+// //   password: string,
+// //   createdAt: Date
+// // }
+
+// // Hand Data Structure
+// // Hand {
+// //   id: number,
+// //   playerId: number, // reference to the player
+// //   name: string, // e.g., 'Player 1 Hand'
+// //   cards: Array<Card> // cards in the player's hand
+// // }
+
+// // React Components
+
+// // Card Component
+// // Renders an individual card using its properties
+// // Card(props: {
+// //   rank: string,
+// //   suit: string,
+// //   color: string,
+// //   backImage: string,
+// //   pipLayout: string | number[]
+// // }) {
+// //   // Render the card image using canvas or other techniques
+// // }
+
+// // Deck Component
+// // Renders a collection of cards (a deck)
+// // Deck(props: { deck: Deck }) {
+// //   // Map over the deck array and render Card components
+// // }
+
+// // Hand Component
+// // Represents a player's hand, extends Deck component
+// Hand extends Deck {
+//   // Additional functionality for sorting, discarding, etc.
+// }
+
+// // DiscardPile Component
+// // Represents the discard pile, extends Deck component
+// DiscardPile extends Deck {
+//   shuffleAndMergeWithDealPile() { /* Shuffle and merge logic */ }
+// }
+
+// // DealPile Component
+// // Represents the deal pile, extends Deck component
+// DealPile extends Deck {
+//   dealCards() { /* Deal cards logic */ }
+// }
+
+// // PlayerTable Component
+// // Displays the cards dealt face-up for each player
+// PlayerTable(props: { playerHands: Array<Hand> }) {
+//   // Render the face-up cards for each player's hand
+// }
+
+// // Showdown Component
+// // Handles the showdown phase, comparing hands and applying modifiers
+// Showdown(props: {
+//   playerHands: Array<Hand>,
+//   modifiers: Array<Modifier>
+// }) {
+//   compareHands() { /* Hand comparison logic */ }
+//   applyModifier(modifier: Modifier) { /* Modifier application logic */ }
+//   // Other showdown logic
+// }
+
+// // Modal Component (or similar)
+// // A reusable component for displaying modals or dialogs
+// Modal(props: {
+//   isOpen: boolean,
+//   title: string,
+//   content: React.Node,
+//   onClose: Function
+// }) {
+//   // Render the modal with the provided content
+// }
+
+// // GameBoard Component
+// // The main component that manages the game state and renders other components
+// GameBoard() {
+//   // Game state management using React state or a state management library
+
+//   // Game logic functions
+//   setupGame() { /* Initialize game state, decks, hands, etc. */ }
+//   dealCards() { /* Deal cards logic */ }
+//   discardCard(card: Card, playerIndex: number) { /* Discard card logic */ }
+//   startShowdown() { /* Start the showdown phase */ }
+//   // Other game logic functions
+
+//   // Render other components
+//   return (
+//     <div>
+//       <Deck deck={mainDeck} />
+//       {playerHands.map((hand, index) => (
+//         <Hand
+//           key={index}
+//           hand={hand}
+//           onDiscard={(card) => discardCard(card, index)}
+//         />
+//       ))}
+//       <DiscardPile
+//         discardPile={discardPile}
+//         onShuffle={shuffleDiscardPile}
+//       />
+//       <DealPile dealPile={dealPile} onDeal={dealCards} />
+//       <PlayerTable playerHands={playerHands} />
+//       <Showdown
+//         playerHands={playerHands}
+//         modifiers={gameModifiers}
+//       />
+//       <Modal
+//         isOpen={showModal}
+//         title={modalTitle}
+//         content={modalContent}
+//         onClose={closeModal}
+//       />
+//     </div>
+//   )
+// }
+
+// // Utility Functions and Other Modules
+// initializeDatabase() { /* Database population logic */ }
+// loadDeckFromDatabase() { /* Load deck data from the database */ }
+// saveGameStateToDatabase() { /* Save game state to the database */ }
+// // Other utility functions and modules as needed
