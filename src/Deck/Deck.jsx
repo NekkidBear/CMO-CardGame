@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PropTypes from 'prop-types'
 import Card from "../Card/CardV2.jsx";
 
-function Deck({ numCardsToDeal = 104 }) { // Default value if not passed as prop
+function Deck({ numCardsToDeal = 13 }) { // Default value if not passed as prop
   const initializeDeck = () => {
     let suits = [
       "cups",
