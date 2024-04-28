@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './css-cards/Card.css'; // Import the CSS file with the provided styles
-import backImage from '../assets/back image/card back black.png';
-import { cups, coins, staves, swords, terrapins, octograms, elephants, crowns,king, queen, jack} from '../assets/suit icons'
+import backImage from '../assets/back_image/card-back-black.png';
+import { cups, coins, staves, swords, terrapins, octograms, elephants, crowns,king, queen, jack} from '../assets/suit_icons'
 
 function Card({ rank, suit, value }) {
+  let [isFaceDown, setIsFaceDown] = useState(true)
   const isRoyalRank = ['A', 'J', 'Q', 'K'].includes(rank);
   const pipImages = {
     'cups': cups,
@@ -44,8 +45,8 @@ function Card({ rank, suit, value }) {
   );
 
   return (
-    <div className={`card ${suit}`} data-suit={suit} data-value={value}>
-      {isRoyalRank ? renderRoyalRank() : renderPips()}
+  <div className={`card ${suit}`} data-suit={suit} data-value={value} onClick={() => setIsFaceDown(!isFaceDown)}>
+      {isFaceDown? <img src={backImage} alt="Card back" className="card-back" /> :isRoyalRank ? renderRoyalRank() : renderPips()}
       {renderCornerNumber('top')}
       {renderCornerNumber('bottom')}
     </div>
