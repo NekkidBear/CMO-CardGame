@@ -116,47 +116,47 @@ body {
 }
 
 [data-suit="cups"] .corner-number::after {
-  background-image: url('../assets/suit_icons/cups.svg');
+  background-image: url('../../assets/suit_icons/cups.svg');
 }
 
 [data-suit="swords"] .corner-number::after {
-  background-image: url('../assets/suit_icons/Swords.svg');
+  background-image: url('../../assets/suit_icons/Swords.svg');
 }
 
 [data-suit="coins"] .corner-number::after {
-  background-image: url('../assets/suit_icons/Coins.svg');
+  background-image: url('../../assets/suit_icons/Coins.svg');
 }
 
 [data-suit="staves"] .corner-number::after {
-  background-image: url('../assets/suit_icons/staves.svg');
+  background-image: url('../../assets/suit_icons/staves.svg');
 }
 
 [data-suit="crowns"] .corner-number::after {
-  background-image: url('../assets/suit_icons/Crowns.svg');
+  background-image: url('../../assets/suit_icons/Crowns.svg');
 }
 
 [data-suit="elephants"] .corner-number::after {
-  background-image: url('../assets/suit_icons/elephants.svg');
+  background-image: url('../../assets/suit_icons/elephants.svg');
 }
 
 [data-suit="octograms"] .corner-number::after {
-  background-image: url('../assets/suit_icons/octagram.svg');
+  background-image: url('../../assets/suit_icons/octagram.svg');
 }
 
 [data-suit="terrapins"] .corner-number::after {
-  background-image: url('../assets/suit_icons/terrapins.svg');
+  background-image: url('../../assets/suit_icons/terrapins.svg');
 }
 
 [data-value="J"] .pip {
-  background-image: url('../assets/suit_icons/jack.svg');
+  background-image: url('../../assets/suit_icons/jack.svg');
 }
 
 [data-value="Q"].pip {
-  background-image: url('../assets/suit_icons/queen.svg');
+  background-image: url('../../assets/suit_icons/queen.svg');
 }
 
 [data-value="K"] .pip {
-  background-image: url( '../assets/suit_icons/king.svg');
+  background-image: url( '../../assets/suit_icons/king.svg');
 }
 
 [data-value="A"] .pip,

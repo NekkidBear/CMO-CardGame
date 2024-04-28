@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import PropTypes from 'prop-types'
 import Card from "../Card/CardV2.jsx";
 
@@ -41,11 +41,6 @@ function Deck({ numCardsToDeal = 13 }) { // Default value if not passed as prop
 
   const [deck, setDeck] = useState(initializeDeck());
   const [dealtCards, setDealtCards] = useState([]);
-
-//   useEffect(() => {
-//     setDealtCards(deck.slice(0, numCardsToDeal));
-//     setDeck(prevDeck => prevDeck.slice(numCardsToDeal));
-//   }, [deck, numCardsToDeal]);
 
   const handleDealCards = () => {
     setDealtCards(deck.slice(0, numCardsToDeal));
