@@ -57,35 +57,35 @@ body {
 }
 
 [data-suit="cups"] .pip {
-  background-image: url('../assets/suit_icons/cups.svg');
+  background-image: url('../../assets/suit_icons/cups.svg');
 }
 
 [data-suit="swords"] .pip {
-  background-image: url('../assets/suit_icons/Swords.svg');
+  background-image: url('../../assets/suit_icons/Swords.svg');
 }
 
 [data-suit="coins"] .pip {
-  background-image: url('../assets/suit_icons/Coins.svg');
+  background-image: url('../../assets/suit_icons/Coins.svg');
 }
 
 [data-suit="staves"] .pip {
-  background-image: url('../assets/suit_icons/staves.svg');
+  background-image: url('../../assets/suit_icons/staves.svg');
 }
 
 [data-suit="crowns"] .pip {
-  background-image: url('../assets/suit_icons/Crowns.svg');
+  background-image: url('../../assets/suit_icons/Crowns.svg');
 }
 
 [data-suit="elephants"] .pip {
-  background-image: url('../assets/suit_icons/elephants.svg');
+  background-image: url('../../assets/suit_icons/elephants.svg');
 }
 
 [data-suit="octograms"] .pip {
-  background-image: url('../assets/suit_icons/octagram.svg');
+  background-image: url('../../assets/suit_icons/octagram.svg');
 }
 
 [data-suit="terrapins"] .pip {
-  background-image: url('../assets/suit_icons/terrapins.svg');
+  background-image: url('../../assets/suit_icons/terrapins.svg');
 }
 
 .corner-number {
