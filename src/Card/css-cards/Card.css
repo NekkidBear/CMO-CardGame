@@ -65,7 +65,7 @@ body {
 }
 
 [data-suit="coins"] .pip {
-  background-image: url('../assets/suit_icons/Coins.svg;')'
+  background-image: url('../assets/suit_icons/Coins.svg');
 }
 
 [data-suit="staves"] .pip {
@@ -124,7 +124,7 @@ body {
 }
 
 [data-suit="coins"] .corner-number::after {
-  background-image: url('../assets/suit_icons/Coins.svg;');
+  background-image: url('../assets/suit_icons/Coins.svg');
 }
 
 [data-suit="staves"] .corner-number::after {
@@ -155,7 +155,7 @@ body {
   background-image: url('../assets/suit_icons/queen.svg');
 }
 
-[data-value="K"][data-suit="club"] .pip {
+[data-value="K"] .pip {
   background-image: url( '../assets/suit_icons/king.svg');
 }
 
