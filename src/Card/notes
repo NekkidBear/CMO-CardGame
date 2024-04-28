@@ -26,7 +26,7 @@
 //   playerId: number, // reference to the player
 //   name: string, // e.g., 'Player 1 Hand'
 //   cards: Array<Card> // cards in the player's hand
-}
+// }
 
 // React Components
 
