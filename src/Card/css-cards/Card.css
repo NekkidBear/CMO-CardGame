@@ -1,12 +1,14 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #DDD;
+  background-color: #ddd;
   display: flex;
   flex-wrap: wrap;
-  gap: .5em;
+  gap: 0.5em;
 }
 
 .card {
@@ -16,7 +18,7 @@ body {
   height: var(--height);
   background-color: white;
   border: 1px solid black;
-  border-radius: .25em;
+  border-radius: 0.25em;
   padding: 1em;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -25,14 +27,24 @@ body {
   position: relative;
 }
 
-[data-suit="heart"].card,
-[data-suit="diamond"].card {
-  color: red;
+[data-suit="cups"].card,
+[data-suit="crowns"].card {
+  color: #ff0000;
 }
 
-[data-suit="spade"].card,
-[data-suit="club"].card {
-  color: black;
+[data-suit="swords"].card,
+[data-suit="elephants"].card {
+  color: #ffaa00;
+}
+
+[data-suit="staves"].card,
+[data-suit="octograms"].card {
+  color: #00ff00;
+}
+
+[data-suit="coins"].card,
+[data-suit="terrapins"].card {
+  color: #0000ff;
 }
 
 .pip {
@@ -44,20 +56,36 @@ body {
   background-size: cover;
 }
 
-[data-suit="heart"] .pip {
-  background-image: url("imgs/heart.svg");
+[data-suit="cups"] .pip {
+  background-image: url('../assets/suit_icons/cups.svg');
 }
 
-[data-suit="diamond"] .pip {
-  background-image: url("imgs/diamond.svg");
+[data-suit="swords"] .pip {
+  background-image: url('../assets/suit_icons/Swords.svg');
 }
 
-[data-suit="spade"] .pip {
-  background-image: url("imgs/spade.svg");
+[data-suit="coins"] .pip {
+  background-image: url('../assets/suit_icons/Coins.svg;')'
 }
 
-[data-suit="club"] .pip {
-  background-image: url("imgs/club.svg");
+[data-suit="staves"] .pip {
+  background-image: url('../assets/suit_icons/staves.svg');
+}
+
+[data-suit="crowns"] .pip {
+  background-image: url('../assets/suit_icons/Crowns.svg');
+}
+
+[data-suit="elephants"] .pip {
+  background-image: url('../assets/suit_icons/elephants.svg');
+}
+
+[data-suit="octograms"] .pip {
+  background-image: url('../assets/suit_icons/octagram.svg');
+}
+
+[data-suit="terrapins"] .pip {
+  background-image: url('../assets/suit_icons/terrapins.svg');
 }
 
 .corner-number {
@@ -66,25 +94,25 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  letter-spacing: -.1em;
-  font-size: .8em;
+  letter-spacing: -0.1em;
+  font-size: 0.8em;
 }
 
 .corner-number.top {
-  top: .25em;
-  left: .25em;
+  top: 0.25em;
+  left: 0.25em;
 }
 
 .corner-number.bottom {
-  bottom: .25em;
-  right: .25em;
+  bottom: 0.25em;
+  right: 0.25em;
   transform: rotate(180deg);
 }
 
 .corner-number::after {
   line-height: 0;
   display: block;
-  width: .5em;
+  width: 0.5em;
 }
 
 [data-suit="heart"] .corner-number::after {
@@ -376,8 +404,6 @@ body {
   grid-row-start: 4;
   grid-column-start: 2;
 }
-
-
 
 [data-value="10"] .pip:first-child {
   grid-row-start: 1;

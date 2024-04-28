@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
 import './css-cards/Card.css'; // Import the CSS file with the provided styles
 import backImage from '../assets/back_image/card-back-black.png';
-import cups from '../assets/suit_icons/cups.svg';
-import coins from '../assets/suit_icons/Coins.svg';
-import staves from '../assets/suit_icons/staves.svg';
-import swords from '../assets/suit_icons/Swords.svg'
-import terrapins  from '../assets/suit_icons/terrapins.svg';
-import octograms from '../assets/suit_icons/octagram.svg';
-import elephants from '../assets/suit_icons/elephants.svg';
-import crowns from '../assets/suit_icons/Crowns.svg';
+
+import crowns from ;
 import king  from '../assets/suit_icons/king.svg';
 import queen  from '../assets/suit_icons/queen.svg';
 import jack from '../assets/suit_icons/jack.svg';
