@@ -65,7 +65,7 @@ body {
 }
 
 [data-suit="coins"] .pip {
-  background-image: url('../assets/suit_icons/Coins.svg;')'
+  background-image: url('../assets/suit_icons/Coins.svg');
 }
 
 [data-suit="staves"] .pip {
