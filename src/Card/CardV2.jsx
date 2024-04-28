@@ -2,10 +2,6 @@ import React, {useState} from 'react';
 import './css-cards/Card.css'; // Import the CSS file with the provided styles
 import backImage from '../assets/back_image/card-back-black.png';
 
-import crowns from ;
-import king  from '../assets/suit_icons/king.svg';
-import queen  from '../assets/suit_icons/queen.svg';
-import jack from '../assets/suit_icons/jack.svg';
 
 
 function Card({ rank, suit, value }) {
