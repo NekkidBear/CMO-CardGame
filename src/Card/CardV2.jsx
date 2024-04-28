@@ -11,14 +11,14 @@ function Card({ rank, suit, value }) {
   const renderPips = () => {
     const pips = [];
     for (let i = 0; i < pipCount; i++) {
-      pips.push(<div key={i} className="pip" />);
+      pips.push(<div key={i} className="pip" data-suit={suit} data-value={value} />);
     }
     return pips;
   };
 
   const renderRoyalRank = () => (
     <>
-      <div className="pip royal-symbol" />
+      <div className="pip royal-symbol" data-suit={suit} data-value={value} />
       <span className="royal-rank">{rank}</span>
     </>
   );
@@ -26,7 +26,7 @@ function Card({ rank, suit, value }) {
   const renderCornerNumber = (position) => (
     <div className={`corner-number ${position}`}>
       {value}
-      <div className="corner-symbol" />
+      <div className="corner-symbol" data-suit={suit} />
     </div>
   );
 
