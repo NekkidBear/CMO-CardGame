@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "./css-cards/Card.css"; // Import the CSS file with the provided styles
-import backImage from "../assets/back_image/card-back-black.png";
 
-function Card({ rank, suit }) {
+function Card({ rank, suit, dealing, index}) {
   let [isFaceDown, setIsFaceDown] = useState(true);
   const isRoyalRank = ["A", "J", "Q", "K"].includes(rank);
 
@@ -34,7 +33,8 @@ function Card({ rank, suit }) {
 
   return (
     <div
-      className={`card ${isFaceDown ? "flipped" : ""} ${suit}`}
+      className={`card ${isFaceDown ? "flipped" : ""}  ${dealing ? "dealing" : ""}`}
+      style={{ "--i": index }}
       data-suit={suit}
       data-rank={rank}
       onClick={() => setIsFaceDown(!isFaceDown)}
