@@ -1,5 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
+import Deck from "../Deck/Deck.jsx";
+
 
 function Player(){
-    //todo
+let [playerHand, setPlayerHand] = useState([]);
 }
+
+export default Player;

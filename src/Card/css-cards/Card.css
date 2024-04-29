@@ -17,7 +17,7 @@ body {
   width: var(--width);
   height: var(--height);
   background-color: #F5DEB3;
-  border: 1px solid black;
+  border: 3px solid black;
   border-radius: 0.25em;
   padding: 1em;
   display: grid;
@@ -30,21 +30,25 @@ body {
 [data-suit="cups"].card,
 [data-suit="crowns"].card {
   color: #BB0A21;
+  border-color: #bb0a21;
 }
 
 [data-suit="swords"].card,
 [data-suit="elephants"].card {
   color: #000000;
+  border-color: #000000;
 }
 
 [data-suit="staves"].card,
 [data-suit="octograms"].card {
   color: #256F45;
+  border-color: #214C34;
 }
 
 [data-suit="coins"].card,
 [data-suit="terrapins"].card {
   color: #0000ff;
+  border-color: #0000ff;
 }
 
 .pip {
