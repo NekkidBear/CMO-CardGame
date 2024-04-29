@@ -483,7 +483,9 @@ body {
   background-image: url('../../assets/back_image/card-back-black.png');
   background-size: cover;
   background-position: center;
+  border: 1px solid black;
 }
 .card.flipped .corner-number {
   visibility: hidden;
 }
+
