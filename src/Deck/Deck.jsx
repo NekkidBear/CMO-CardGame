@@ -61,9 +61,6 @@ function Deck({ numCardsToDeal = 13}) {
       <div className="card-container">
         {playerHand.map((card, index) => (
           <div key={index}>
-            <p>
-              {card.rank} of {card.suit}
-            </p>
             <Card
               key={index}
               rank={card.rank}
