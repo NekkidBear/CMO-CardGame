@@ -34,7 +34,7 @@ body {
 
 [data-suit="swords"].card,
 [data-suit="elephants"].card {
-  color: #B52E0D;
+  color: #000000;
 }
 
 [data-suit="staves"].card,

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "../Card/CardV2.jsx";
 
-function Deck({ numCardsToDeal = 1 }) {
+function Deck({ numCardsToDeal = 13}) {
   const initializeDeck = () => {
     let suits = [
       "cups",
