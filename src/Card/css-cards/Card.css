@@ -25,6 +25,7 @@ body {
   grid-template-rows: repeat(8, 1fr);
   align-items: center;
   position: relative;
+  background-size: cover;
 }
 
 [data-suit="cups"].card,
@@ -41,8 +42,8 @@ body {
 
 [data-suit="staves"].card,
 [data-suit="octograms"].card {
-  color: #256F45;
-  border-color: #214C34;
+  color: #7a306c;
+  border-color: #7a306c;
 }
 
 [data-suit="coins"].card,
@@ -476,4 +477,13 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.card.flipped {
+  background-image: url('../../assets/back_image/card-back-black.png');
+  background-size: cover;
+  background-position: center;
+}
+.card.flipped .corner-number {
+  visibility: hidden;
 }

@@ -1,17 +1,19 @@
-import React, {useState} from 'react';
-import './css-cards/Card.css'; // Import the CSS file with the provided styles
-import backImage from '../assets/back_image/card-back-black.png';
+import React, { useState } from "react";
+import "./css-cards/Card.css"; // Import the CSS file with the provided styles
+import backImage from "../assets/back_image/card-back-black.png";
 
 function Card({ rank, suit }) {
-  let [isFaceDown, setIsFaceDown] = useState(false)
-  const isRoyalRank = ['A', 'J', 'Q', 'K'].includes(rank);
+  let [isFaceDown, setIsFaceDown] = useState(true);
+  const isRoyalRank = ["A", "J", "Q", "K"].includes(rank);
 
-  const pipCount = isRoyalRank ? 1: rank;
+  const pipCount = isRoyalRank ? 1 : rank;
 
   const renderPips = () => {
     const pips = [];
     for (let i = 0; i < pipCount; i++) {
-      pips.push(<div key={i} className="pip" data-suit={suit} data-rank={rank} />);
+      pips.push(
+        <div key={i} className="pip" data-suit={suit} data-rank={rank} />
+      );
     }
     return pips;
   };
@@ -31,10 +33,15 @@ function Card({ rank, suit }) {
   );
 
   return (
-    <div className={`card ${suit}`} data-suit={suit} data-rank={rank} onClick={() => setIsFaceDown(!isFaceDown)}>
-      {isFaceDown? <img src={backImage} alt="Card back" className="card-back" /> :isRoyalRank ? renderRoyalRank() : renderPips()}
-      {renderCornerNumber('top')}
-      {renderCornerNumber('bottom')}
+    <div
+      className={`card ${isFaceDown ? "flipped" : ""} ${suit}`}
+      data-suit={suit}
+      data-rank={rank}
+      onClick={() => setIsFaceDown(!isFaceDown)}
+    >
+      {isFaceDown ? null : isRoyalRank ? renderRoyalRank() : renderPips()}
+      {renderCornerNumber("top")}
+      {renderCornerNumber("bottom")}
     </div>
   );
 }
