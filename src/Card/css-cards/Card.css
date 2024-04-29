@@ -460,3 +460,9 @@ body {
   grid-column-start: 2;
   transform: rotate(180deg);
 }
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
