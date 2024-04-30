@@ -1,36 +1,25 @@
-/* Styles for the container of the undealt cards */
 .undealt-cards {
-    /* Position the container relative to its normal position */
     position: relative;
-    /* Set the width and height of the container to fit your card size */
-    width: 100px; 
-    height: 150px; 
-    /* Use Flexbox to center the cards in the container */
+    width: 100px; /* Adjust to fit your card size */
+    height: 150px; /* Adjust to fit your card size */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* Set the height of the container to 25% of the viewport height */
     height: 25vh;
-    /* Add some space below the container */
     margin-bottom: 5px;
 }
 
-/* Styles for the undealt cards */
 .undealt-cards .card {
-    /* Position the cards absolutely within the undealt cards container */
     position: absolute;
     top: 0;
     left: 0;
-    /* Add a black border around the cards */
     border: 1px solid black;
-    /* Set the origin for the transformations (including rotation) to the center of the card */
     transform-origin: center; 
-    /* Apply the deal animation to the cards */
     animation: deal 2s forwards;
+    
 }
 
-/* Rotate every other card slightly to create the appearance of a messy stack of cards */
 .undealt-cards .card:nth-child(n) {
     transform: rotate(-3deg);
 }
@@ -39,18 +28,14 @@
     transform: rotate(3deg);
 }
 
-/* Define the deal animation */
 @keyframes deal {
-    /* At the start of the animation, the card is not rotated and not moved */
     0% {
         transform: rotate(0deg) translateX(0);
     }
-    /* At the middle of the animation, the card is rotated 180 degrees */
     50% {
         transform: rotate(180deg);
     }
-    /* At the end of the animation, the card is rotated 360 degrees and moved 100px to the right */
     100% {
-        transform: rotate(360deg) translateX(100px); 
+        transform: rotate(360deg) translateX(100px); /* Adjust this value based on the distance you want the cards to move */
     }
 }
