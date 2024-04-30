@@ -41,12 +41,10 @@ function Deck({ numCardsToDeal = 13}) {
   const [faceDownDeck, setFaceDownDeck] = useState(initializeDeck());
   const [playerHand, setPlayerHand] = useState([]);
   const [dealing, setDealing] = useState(false);
-  const [dealing, setDealing] = useState(false);
 
   const handleDealCards = () => {
     setPlayerHand(faceDownDeck.slice(0, numCardsToDeal));
     setFaceDownDeck((prevDeck) => prevDeck.slice(numCardsToDeal));
-    setDealing(true)
     setDealing(true)
   };
 
