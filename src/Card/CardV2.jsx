@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import './css-cards/Card.css'; // Import the CSS file with the provided styles
 
 // Define the Card component
-function Card({ rank, suit, color, dealing = false }) {
+function Card({ index, rank, suit, dealing = false }) {
   // Initialize the isFaceDown state as true
   const [isFaceDown, setIsFaceDown] = useState(true);
 
@@ -33,7 +33,6 @@ function Card({ rank, suit, color, dealing = false }) {
 Card.propTypes = {
   rank: PropTypes.string.isRequired,
   suit: PropTypes.string.isRequired,
-  color: PropTypes.string.isRequired,
   dealing: PropTypes.bool,
 };
 

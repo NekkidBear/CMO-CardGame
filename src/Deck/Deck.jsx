@@ -60,7 +60,7 @@ function Deck({ numCardsToDeal = 13}) {
   return (
     <div className="MasterDeck">
       <div className="undealt-cards">
-        {faceDownDeck.map((card, index) => (<Card index={index} rank={card.rank} suit={card.suit} dealing={dealing}/>))}
+        {faceDownDeck.map((card, index) => (<Card key={card.id} index={index} rank={card.rank} suit={card.suit} dealing={dealing}/>))}
       </div>
       <button onClick={handleDealCards}>Deal Cards</button>
       <button onClick={shuffleCards}>Shuffle Cards</button>
@@ -68,10 +68,9 @@ function Deck({ numCardsToDeal = 13}) {
         {playerHand.map((card, index) => (
           <div key={index}>
             <Card
-              key={index}
+              index={index}
               rank={card.rank}
               suit={card.suit}
-              color={card.color}
             />
           </div>
         ))}
