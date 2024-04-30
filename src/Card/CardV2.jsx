@@ -1,7 +1,7 @@
 // Import necessary modules
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import './Card.css'; // Import the CSS file with the provided styles
+import './css-cards/Card.css'; // Import the CSS file with the provided styles
 
 // Define the Card component
 function Card({ rank, suit, color, dealing = false }) {
