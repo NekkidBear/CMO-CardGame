@@ -1,40 +1,58 @@
-// Import necessary modules
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
-import './css-cards/Card.css'; // Import the CSS file with the provided styles
+import "./css-cards/Card.css";
 
-// Define the Card component
-function Card({ index, rank, suit, dealing = false }) {
-  // Initialize the isFaceDown state as true
+function Card({ rank, suit, dealing = false }) {
   const [isFaceDown, setIsFaceDown] = useState(true);
+  const isRoyalRank = ["A", "J", "Q", "K"].includes(rank);
+  const cardRef = useRef(null);
 
-  // Render the Card component
+  useEffect(() => {
+    const card = cardRef.current;
+    if (card) {
+      addCardElements(card, rank, suit);
+    }
+  }, [rank, suit]);
+
+  const renderPips = () => {
+    const pipCount = isRoyalRank ? 1 : parseInt(rank);
+
+    const pips = [];
+    for (let i = 0; i < pipCount; i++) {
+      pips.push(
+        <div key={i} className="pip" data-suit={suit} data-rank={rank} />
+      );
+    }
+    return pips;
+  };
+
+  const renderRoyalRank = () => (
+    <>
+      <div className="pip royal-symbol" data-suit={suit} data-rank={rank} />
+      <span className="royal-rank">{rank}</span>
+    </>
+  );
+
   return (
     <div
-      // Set the class name based on the isFaceDown and dealing states
-      className={`card ${isFaceDown ? "flipped" : ""} ${dealing ? "dealing" : ""}`}
-      // Set the CSS variable --i to the index of the card
-      style={{ "--i": index }}
-      // Set the suit and rank of the card as data attributes
+      className={`card ${isFaceDown ? "flipped" : ""} ${
+        dealing ? "dealing" : ""
+      }`}
       data-suit={suit}
       data-rank={rank}
-      // Flip the card when it's clicked
       onClick={() => setIsFaceDown(!isFaceDown)}
     >
-      {/* Render the rank and suit of the card */}
+      {isFaceDown ? null : isRoyalRank ? renderRoyalRank() : renderPips()}
       <div className="corner-number top">{rank}</div>
-      <div className="pip">{suit}</div>
       <div className="corner-number bottom">{rank}</div>
     </div>
   );
 }
 
-// Define the prop types for the Card component
 Card.propTypes = {
   rank: PropTypes.string.isRequired,
   suit: PropTypes.string.isRequired,
   dealing: PropTypes.bool,
 };
 
-// Export the Card component as the default export
 export default Card;
