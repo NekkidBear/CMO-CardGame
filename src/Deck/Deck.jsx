@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "../Card/CardV2.jsx";
+import Deck from 'react-poker';
+import "react-poker/styles.css";
 import "./Deck.css";
 
-function Deck({ numCardsToDeal = 13 }) {
+function CMODeck({ numCardsToDeal = 13 }) {
   const initializeDeck = () => {
     let suits = [
       "cups",
@@ -99,4 +101,4 @@ function Deck({ numCardsToDeal = 13 }) {
 
 Deck.propTypes = { numCardsToDeal: PropTypes.number };
 
-export default Deck;
+export default CMODeck;
