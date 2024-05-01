@@ -1,0 +1,16 @@
+
+[data-value="3"] .pip:first-child {
+    grid-row-start: 1;
+    grid-column-start: 2;
+  }
+  
+  [data-value="3"] .pip:nth-child(2) {
+    grid-row-start: 4;
+    grid-column-start: 2;
+  }
+  
+  [data-value="3"] .pip:nth-child(3) {
+    grid-row-start: 7;
+    grid-column-start: 2;
+    transform: rotate(180deg);
+  }

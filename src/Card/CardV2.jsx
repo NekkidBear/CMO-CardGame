@@ -42,6 +42,7 @@ function Card({ rank, suit, dealing = false }) {
       data-rank={rank}
       onClick={() => setIsFaceDown(!isFaceDown)}
     >
+      
       {isFaceDown ? null : isRoyalRank ? renderRoyalRank() : renderPips()}
       <div className="corner-number top">{rank}</div>
       <div className="corner-number bottom">{rank}</div>

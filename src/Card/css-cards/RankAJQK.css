@@ -1,0 +1,21 @@
+[data-value="A"] .pip,
+[data-value="J"] .pip,
+[data-value="Q"] .pip,
+[data-value="K"] .pip {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-row-end: span 6;
+  grid-column-end: span 3;
+}
+
+[data-rank="J"] .pip {
+    background-image: url("../../assets/suit_icons/jack.svg");
+  }
+  
+  [data-rank="Q"].pip {
+    background-image: url("../../assets/suit_icons/queen.svg");
+  }
+  
+  [data-rank="K"] .pip {
+    background-image: url("../../assets/suit_icons/king.svg");
+  }
