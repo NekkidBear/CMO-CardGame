@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "../Card/CardV2.jsx";
+import "./Deck.css";
 
-function Deck({ numCardsToDeal = 13}) {
+function Deck({ numCardsToDeal = 13 }) {
   const initializeDeck = () => {
     let suits = [
       "cups",
@@ -14,7 +15,21 @@ function Deck({ numCardsToDeal = 13}) {
       "octograms",
       "terrapins",
     ];
-    let ranks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+    let ranks = [
+      "A",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "J",
+      "Q",
+      "K",
+    ];
     let colors = {
       cups: "#ff0000",
       crowns: "#ff0000",
@@ -39,10 +54,12 @@ function Deck({ numCardsToDeal = 13}) {
 
   const [faceDownDeck, setFaceDownDeck] = useState(initializeDeck());
   const [playerHand, setPlayerHand] = useState([]);
+  const [dealing, setDealing] = useState(false);
 
   const handleDealCards = () => {
     setPlayerHand(faceDownDeck.slice(0, numCardsToDeal));
     setFaceDownDeck((prevDeck) => prevDeck.slice(numCardsToDeal));
+    setDealing(true);
   };
 
   const shuffleCards = () => {
@@ -56,20 +73,23 @@ function Deck({ numCardsToDeal = 13}) {
   console.log(playerHand);
   return (
     <div className="MasterDeck">
+      <div className="undealt-cards">
+        {faceDownDeck.map((card, index) => (
+          <Card
+            key={card.id}
+            index={index}
+            rank={card.rank}
+            suit={card.suit}
+            dealing={dealing}
+          />
+        ))}
+      </div>
       <button onClick={handleDealCards}>Deal Cards</button>
       <button onClick={shuffleCards}>Shuffle Cards</button>
       <div className="card-container">
         {playerHand.map((card, index) => (
           <div key={index}>
-            <p>
-              {card.rank} of {card.suit}
-            </p>
-            <Card
-              key={index}
-              rank={card.rank}
-              suit={card.suit}
-              color={card.color}
-            />
+            <Card key={index} index={index} rank={card.rank} suit={card.suit} />
           </div>
         ))}
       </div>

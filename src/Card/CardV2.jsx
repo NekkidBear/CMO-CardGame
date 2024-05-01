@@ -1,17 +1,27 @@
-import React, {useState} from 'react';
-import './css-cards/Card.css'; // Import the CSS file with the provided styles
-import backImage from '../assets/back_image/card-back-black.png';
+import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
+import "./css-cards/Card.css";
 
-function Card({ rank, suit }) {
-  let [isFaceDown, setIsFaceDown] = useState(false)
-  const isRoyalRank = ['A', 'J', 'Q', 'K'].includes(rank);
+function Card({ rank, suit, dealing = false }) {
+  const [isFaceDown, setIsFaceDown] = useState(true);
+  const isRoyalRank = ["A", "J", "Q", "K"].includes(rank);
+  const cardRef = useRef(null);
 
-  const pipCount = isRoyalRank ? 1: rank;
+  useEffect(() => {
+    const card = cardRef.current;
+    if (card) {
+      addCardElements(card, rank, suit);
+    }
+  }, [rank, suit]);
 
   const renderPips = () => {
+    const pipCount = isRoyalRank ? 1 : parseInt(rank);
+
     const pips = [];
     for (let i = 0; i < pipCount; i++) {
-      pips.push(<div key={i} className="pip" data-suit={suit} data-rank={rank} />);
+      pips.push(
+        <div key={i} className="pip" data-suit={suit} data-rank={rank} />
+      );
     }
     return pips;
   };
@@ -23,20 +33,26 @@ function Card({ rank, suit }) {
     </>
   );
 
-  const renderCornerNumber = (position) => (
-    <div className={`corner-number ${position}`}>
-      {rank}
-      <div className="corner-symbol" data-suit={suit} />
-    </div>
-  );
-
   return (
-    <div className={`card ${suit}`} data-suit={suit} data-rank={rank} onClick={() => setIsFaceDown(!isFaceDown)}>
-      {isFaceDown? <img src={backImage} alt="Card back" className="card-back" /> :isRoyalRank ? renderRoyalRank() : renderPips()}
-      {renderCornerNumber('top')}
-      {renderCornerNumber('bottom')}
+    <div
+      className={`card ${isFaceDown ? "flipped" : ""} ${
+        dealing ? "dealing" : ""
+      }`}
+      data-suit={suit}
+      data-rank={rank}
+      onClick={() => setIsFaceDown(!isFaceDown)}
+    >
+      {isFaceDown ? null : isRoyalRank ? renderRoyalRank() : renderPips()}
+      <div className="corner-number top">{rank}</div>
+      <div className="corner-number bottom">{rank}</div>
     </div>
   );
 }
+
+Card.propTypes = {
+  rank: PropTypes.string.isRequired,
+  suit: PropTypes.string.isRequired,
+  dealing: PropTypes.bool,
+};
 
 export default Card;
