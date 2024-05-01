@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "../Card/CardV2.jsx";
-import Deck from 'react-poker';
+import Deck from '../react-poker/src/Deck.js';
 import "react-poker/styles.css"
 import "./Deck.css";
 
