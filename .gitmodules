@@ -1,0 +1,3 @@
+[submodule "react-poker"]
+	path = react-poker
+	url = https://github.com/therewillbecode/react-poker

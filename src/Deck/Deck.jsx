@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Card from "../Card/CardV2.jsx";
 import Deck from 'react-poker';
-import "react-poker/styles.css";
+import "react-poker/styles.css"
 import "./Deck.css";
 
 function CMODeck({ numCardsToDeal = 13 }) {
